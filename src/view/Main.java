@@ -14,7 +14,7 @@ public class Main {
 		System.out.println("Escolha a opção desejada: "
 				+ "\n1- Ver IPv4 e Adaptador"
 				+ "\n2- Ver teste de ping"
-				+ "\n3- Finalizar iteração\n");
+				+ "\n3- Finalizar interação\n");
 		do {
 		escolha = in.nextInt();
 		
