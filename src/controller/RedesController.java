@@ -129,7 +129,7 @@ public class RedesController {
 		String media = " ";
 		
 		if(name.contains("Windows")) {
-			String[] commandPingWin = {"ping", " ", "-4", " ", "-n", " ", "10", " ", "www.google.com.br"};
+			String[] commandPingWin = {"ping", "-4", "-n", "10", "www.google.com.br"};
 			
 			try {
 				Process p = Runtime.getRuntime().exec(commandPingWin);
@@ -143,8 +143,10 @@ public class RedesController {
 					if(line.contains(", ")) {
 						media = line.trim().split(", ")[2];
 						media = media.split("= ")[1];
-						System.out.println("Ping no www.google.com.br");
-						System.out.println("A media foi de: " + media);
+						if(media.contains("ms")) {
+							System.out.println("Ping no www.google.com.br");
+							System.out.println("A media foi de: " + media);
+						}
 					}
 					
 					line = buffer.readLine();
